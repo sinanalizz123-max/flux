@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_net" android:title="Net" android:icon="@android:drawable/ic_menu_sort_by_size" />
+    <item android:id="@+id/nav_data" android:title="Data" android:icon="@android:drawable/ic_menu_save" />
+    <item android:id="@+id/nav_bat" android:title="Battery" android:icon="@android:drawable/ic_lock_idle_charging" />
+    <item android:id="@+id/nav_set" android:title="Settings" android:icon="@android:drawable/ic_menu_preferences" />
+</menu>
