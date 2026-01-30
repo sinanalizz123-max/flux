@@ -2,7 +2,7 @@ name: Build Flux APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "new-work" ]
 
 jobs:
   build:
