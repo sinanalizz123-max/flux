@@ -88,7 +88,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
             setText(view, R.id.sim1_band, "Permission Required", R.color.classic_red)
         }
 
-        // 2. Data Card Logic (FIXED CRASH HERE)
+        // 2. Data Card Logic
         val lblData = view.findViewById<TextView>(R.id.lblData)
         if (hasUsageStatsPermission()) {
             lblData.text = "Data Usage"
@@ -98,9 +98,10 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
             lblData.setTextColor(ContextCompat.getColor(requireContext(), R.color.classic_red))
         }
 
-        // 3. Battery Logic
+        // 3. Battery Logic (FIXED: ID matches XML 'lblBattery')
         val batLevel = sysRepo.getBatteryLevel()
-        view.findViewById<TextView>(R.id.txtBattery)?.text = "${batLevel}%"
+        val lblBattery = view.findViewById<TextView>(R.id.lblBattery)
+        lblBattery?.text = "Battery ${batLevel}%"
     }
 
     private fun setText(view: View, id: Int, text: String, colorRes: Int) {
