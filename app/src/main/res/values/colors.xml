@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="classic_red">#D32F2F</color>  <color name="deep_black">#000000</color>  <color name="soft_black">#121212</color>  <color name="leica_white">#E0E0E0</color> </resources>
