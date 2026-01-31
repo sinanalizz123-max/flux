@@ -21,39 +21,40 @@
                 android:id="@+id/headerTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FLUX MONITOR"
-                android:letterSpacing="0.1"
+                android:text="FLUX NETWORK"
+                android:letterSpacing="0.15"
                 android:textColor="@color/classic_red"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/btnSettings"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:src="@drawable/ic_settings"
                 app:tint="@color/leica_white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Live Network"
+            android:text="SIM 1 • Jio LTE"
             android:textColor="@color/leica_white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="12dp"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="32dp"
             app:cardBackgroundColor="#1A1A1A"
-            app:cardCornerRadius="12dp"
+            app:cardCornerRadius="16dp"
             app:strokeColor="#333333"
             app:strokeWidth="1dp">
 
@@ -61,22 +62,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="24dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="24dp">
                     
-                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSRP" android:textColor="#888888" android:textSize="12sp"/>
-                        <TextView android:id="@+id/sim1_rsrp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-- dBm" android:textColor="@color/leica_white" android:textSize="20sp" android:textStyle="bold"/>
+                    <LinearLayout 
+                        android:layout_width="0dp" 
+                        android:layout_weight="1" 
+                        android:layout_height="wrap_content" 
+                        android:orientation="vertical">
+                        <TextView 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="RSRP (Signal)" 
+                            android:textColor="#888888" 
+                            android:textSize="12sp"
+                            android:letterSpacing="0.05"/>
+                        <TextView 
+                            android:id="@+id/sim1_rsrp" 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="-- dBm" 
+                            android:textColor="@color/leica_white" 
+                            android:textSize="22sp" 
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSRQ" android:textColor="#888888" android:textSize="12sp"/>
-                        <TextView android:id="@+id/sim1_rsrq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-- dB" android:textColor="@color/leica_white" android:textSize="20sp" android:textStyle="bold"/>
+                    <LinearLayout 
+                        android:layout_width="0dp" 
+                        android:layout_weight="1" 
+                        android:layout_height="wrap_content" 
+                        android:orientation="vertical">
+                        <TextView 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="RSRQ (Quality)" 
+                            android:textColor="#888888" 
+                            android:textSize="12sp"
+                            android:letterSpacing="0.05"/>
+                        <TextView 
+                            android:id="@+id/sim1_rsrq" 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="-- dB" 
+                            android:textColor="@color/leica_white" 
+                            android:textSize="22sp" 
+                            android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -84,26 +119,75 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="24dp">
                     
-                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SINR" android:textColor="#888888" android:textSize="12sp"/>
-                        <TextView android:id="@+id/sim1_sinr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-- dB" android:textColor="@color/leica_white" android:textSize="20sp" android:textStyle="bold"/>
+                    <LinearLayout 
+                        android:layout_width="0dp" 
+                        android:layout_weight="1" 
+                        android:layout_height="wrap_content" 
+                        android:orientation="vertical">
+                        <TextView 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="SINR (Noise)" 
+                            android:textColor="#888888" 
+                            android:textSize="12sp"
+                            android:letterSpacing="0.05"/>
+                        <TextView 
+                            android:id="@+id/sim1_sinr" 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="-- dB" 
+                            android:textColor="@color/leica_white" 
+                            android:textSize="22sp" 
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PCI" android:textColor="#888888" android:textSize="12sp"/>
-                        <TextView android:id="@+id/sim1_pci" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/leica_white" android:textSize="20sp" android:textStyle="bold"/>
+                    <LinearLayout 
+                        android:layout_width="0dp" 
+                        android:layout_weight="1" 
+                        android:layout_height="wrap_content" 
+                        android:orientation="vertical">
+                        <TextView 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="PCI (Tower ID)" 
+                            android:textColor="#888888" 
+                            android:textSize="12sp"
+                            android:letterSpacing="0.05"/>
+                        <TextView 
+                            android:id="@+id/sim1_pci" 
+                            android:layout_width="wrap_content" 
+                            android:layout_height="wrap_content" 
+                            android:text="--" 
+                            android:textColor="@color/leica_white" 
+                            android:textSize="22sp" 
+                            android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Band" android:textColor="#888888" android:textSize="12sp"/>
-                    <TextView android:id="@+id/sim1_band" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scanning..." android:textColor="@color/classic_red" android:textSize="16sp" android:textStyle="bold"/>
+                <LinearLayout 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="Frequency Band" 
+                        android:textColor="#888888" 
+                        android:textSize="12sp"
+                        android:letterSpacing="0.05"/>
+                    <TextView 
+                        android:id="@+id/sim1_band" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="Scanning..." 
+                        android:textColor="@color/classic_red" 
+                        android:textSize="18sp" 
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -113,7 +197,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardData"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
                 app:cardBackgroundColor="#1A1A1A"
@@ -128,17 +212,18 @@
                     android:orientation="vertical">
                     
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
                         android:src="@drawable/ic_data"
                         app:tint="@color/leica_white"/>
                     
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="12dp"
                         android:text="Data Usage"
                         android:textColor="@color/leica_white"
+                        android:textSize="14sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -146,7 +231,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardBattery"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="110dp"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
                 app:cardBackgroundColor="#1A1A1A"
@@ -161,8 +246,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
                         android:src="@drawable/ic_battery"
                         app:tint="@color/leica_white"/>
 
@@ -170,9 +255,10 @@
                         android:id="@+id/txtBattery"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="12dp"
                         android:text="Battery"
                         android:textColor="@color/leica_white"
+                        android:textSize="14sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

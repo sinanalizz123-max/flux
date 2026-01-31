@@ -20,38 +20,35 @@ class NetworkRepo(private val context: Context) {
 
     private val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
-    @SuppressLint("MissingPermission") // We handle permissions in UI
+    @SuppressLint("MissingPermission")
     fun getNetworkStats(): NetworkStats {
-        val stats = NetworkStats()
-        
-        // If no permission or no SIM, return empty
         try {
-            val allCellInfo = tm.allCellInfo ?: return stats
+            val allCellInfo = tm.allCellInfo ?: return NetworkStats()
             
             for (info in allCellInfo) {
                 if (info.isRegistered) {
                     when (info) {
                         is CellInfoLte -> {
-                            val signal = info.cellSignalStrength
-                            val id = info.cellIdentity
+                            val s = info.cellSignalStrength
+                            val i = info.cellIdentity
                             return NetworkStats(
-                                type = "LTE / 4G",
-                                rsrp = "${signal.rsrp} dBm",
-                                rsrq = "${signal.rsrq} dB",
-                                sinr = "${signal.rssnr / 10.0} dB",
-                                pci = "${id.pci}",
-                                band = "Band ${getBand(id.earfcn)}"
+                                type = "LTE",
+                                rsrp = if (s.rsrp != 2147483647) "${s.rsrp} dBm" else "--",
+                                rsrq = if (s.rsrq != 2147483647) "${s.rsrq} dB" else "--",
+                                sinr = if (s.rssnr != 2147483647) "${s.rssnr / 10} dB" else "--",
+                                pci = i.pci.toString(),
+                                band = getBand(i.earfcn)
                             )
                         }
-                        is CellInfoNr -> { // 5G
-                             val signal = info.cellSignalStrength as android.telephony.CellSignalStrengthNr
-                             val id = info.cellIdentity as android.telephony.CellIdentityNr
+                        is CellInfoNr -> {
+                             val s = info.cellSignalStrength as android.telephony.CellSignalStrengthNr
+                             val i = info.cellIdentity as android.telephony.CellIdentityNr
                              return NetworkStats(
-                                type = "5G NR",
-                                rsrp = "${signal.csiRsrp} dBm",
-                                rsrq = "${signal.csiRsrq} dB",
-                                sinr = "${signal.ssSinr} dB",
-                                pci = "${id.pci}",
+                                type = "5G",
+                                rsrp = "${s.csiRsrp} dBm",
+                                rsrq = "${s.csiRsrq} dB",
+                                sinr = "${s.ssSinr} dB",
+                                pci = i.pci.toString(),
                                 band = "N78 / 5G"
                             )
                         }
@@ -59,18 +56,17 @@ class NetworkRepo(private val context: Context) {
                 }
             }
         } catch (e: Exception) {
-            return NetworkStats(band = "Error: ${e.message}")
+            return NetworkStats(band = "No Perm")
         }
-        return stats
+        return NetworkStats()
     }
 
-    // Simple helper to guess band from frequency (Simplified map)
     private fun getBand(earfcn: Int): String {
         return when (earfcn) {
-            in 1200..1949 -> "3 (1800 MHz)"
-            in 2750..3449 -> "7 (2600 MHz)"
-            in 38650..39649 -> "40 (2300 MHz)"
-            else -> "Unknown (${earfcn})"
+            in 1200..1949 -> "Band 3"
+            in 2750..3449 -> "Band 7"
+            in 38650..39649 -> "Band 40"
+            else -> "Band ${earfcn}"
         }
     }
 }
