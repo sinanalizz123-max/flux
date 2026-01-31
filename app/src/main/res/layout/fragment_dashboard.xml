@@ -70,48 +70,14 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="24dp">
                     
-                    <LinearLayout 
-                        android:layout_width="0dp" 
-                        android:layout_weight="1" 
-                        android:layout_height="wrap_content" 
-                        android:orientation="vertical">
-                        <TextView 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="RSRP (Signal)" 
-                            android:textColor="#888888" 
-                            android:textSize="12sp"
-                            android:letterSpacing="0.05"/>
-                        <TextView 
-                            android:id="@+id/sim1_rsrp" 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="-- dBm" 
-                            android:textColor="@color/leica_white" 
-                            android:textSize="22sp" 
-                            android:textStyle="bold"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSRP" android:textColor="#888888" android:textSize="12sp"/>
+                        <TextView android:id="@+id/sim1_rsrp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-- dBm" android:textColor="@color/leica_white" android:textSize="22sp" android:textStyle="bold"/>
                     </LinearLayout>
 
-                    <LinearLayout 
-                        android:layout_width="0dp" 
-                        android:layout_weight="1" 
-                        android:layout_height="wrap_content" 
-                        android:orientation="vertical">
-                        <TextView 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="RSRQ (Quality)" 
-                            android:textColor="#888888" 
-                            android:textSize="12sp"
-                            android:letterSpacing="0.05"/>
-                        <TextView 
-                            android:id="@+id/sim1_rsrq" 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="-- dB" 
-                            android:textColor="@color/leica_white" 
-                            android:textSize="22sp" 
-                            android:textStyle="bold"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSRQ" android:textColor="#888888" android:textSize="12sp"/>
+                        <TextView android:id="@+id/sim1_rsrq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-- dB" android:textColor="@color/leica_white" android:textSize="22sp" android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -121,70 +87,20 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="24dp">
                     
-                    <LinearLayout 
-                        android:layout_width="0dp" 
-                        android:layout_weight="1" 
-                        android:layout_height="wrap_content" 
-                        android:orientation="vertical">
-                        <TextView 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="SINR (Noise)" 
-                            android:textColor="#888888" 
-                            android:textSize="12sp"
-                            android:letterSpacing="0.05"/>
-                        <TextView 
-                            android:id="@+id/sim1_sinr" 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="-- dB" 
-                            android:textColor="@color/leica_white" 
-                            android:textSize="22sp" 
-                            android:textStyle="bold"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SINR" android:textColor="#888888" android:textSize="12sp"/>
+                        <TextView android:id="@+id/sim1_sinr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-- dB" android:textColor="@color/leica_white" android:textSize="22sp" android:textStyle="bold"/>
                     </LinearLayout>
 
-                    <LinearLayout 
-                        android:layout_width="0dp" 
-                        android:layout_weight="1" 
-                        android:layout_height="wrap_content" 
-                        android:orientation="vertical">
-                        <TextView 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="PCI (Tower ID)" 
-                            android:textColor="#888888" 
-                            android:textSize="12sp"
-                            android:letterSpacing="0.05"/>
-                        <TextView 
-                            android:id="@+id/sim1_pci" 
-                            android:layout_width="wrap_content" 
-                            android:layout_height="wrap_content" 
-                            android:text="--" 
-                            android:textColor="@color/leica_white" 
-                            android:textSize="22sp" 
-                            android:textStyle="bold"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PCI" android:textColor="#888888" android:textSize="12sp"/>
+                        <TextView android:id="@+id/sim1_pci" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="@color/leica_white" android:textSize="22sp" android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout 
-                    android:layout_width="match_parent" 
-                    android:layout_height="wrap_content" 
-                    android:orientation="vertical">
-                    <TextView 
-                        android:layout_width="wrap_content" 
-                        android:layout_height="wrap_content" 
-                        android:text="Frequency Band" 
-                        android:textColor="#888888" 
-                        android:textSize="12sp"
-                        android:letterSpacing="0.05"/>
-                    <TextView 
-                        android:id="@+id/sim1_band" 
-                        android:layout_width="wrap_content" 
-                        android:layout_height="wrap_content" 
-                        android:text="Scanning..." 
-                        android:textColor="@color/classic_red" 
-                        android:textSize="18sp" 
-                        android:textStyle="bold"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Band" android:textColor="#888888" android:textSize="12sp"/>
+                    <TextView android:id="@+id/sim1_band" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scanning..." android:textColor="@color/classic_red" android:textSize="18sp" android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -218,6 +134,7 @@
                         app:tint="@color/leica_white"/>
                     
                     <TextView
+                        android:id="@+id/lblData"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -252,7 +169,7 @@
                         app:tint="@color/leica_white"/>
 
                     <TextView
-                        android:id="@+id/txtBattery"
+                        android:id="@+id/lblBattery"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -263,6 +180,5 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>
